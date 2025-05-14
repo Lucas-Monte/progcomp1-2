@@ -41,8 +41,8 @@ function pesquisaSatisfacao(){
     }
     let media = soma / 10
     alert(`A média das notas é igual a ${media.toFixed(1)}`)
-    alert(`Tiveram ${insatisfeito} notas insatisfeitas`)
-    alert(`Tiveram ${satisfeito} notas satisfeitas`)
+    alert(`Tiveram ${insatisfeito} notas insatisfeitas (menores que 5)`)
+    alert(`Tiveram ${satisfeito} notas satisfeitas (maiores que 8)`)
 }
 
 
