@@ -1,0 +1,43 @@
+let matriz = []
+let soma
+
+for (let i = 0; i < 4; i++) {
+    matriz[i] = []
+    for (let j = 0; j < 7; j++) {
+        matriz[i][j] = parseInt(Math.random()*1000)
+    }
+}
+
+console.log(matriz)
+
+for (let i = 0; i < matriz.length; i++) {
+    soma = 0
+    for (let j = 0; j < matriz[i].length; j++) {
+        soma += matriz[i][j]
+    }
+    console.log(`A soma das vendas do ${i + 1}° vendedor é R$ ${soma}`)
+}
+
+for (let j = 0; j < 7; j++) {
+    soma = 0
+    for (let i = 0; i < matriz.length; i++) {
+        soma += matriz[i][j]
+    }
+    console.log(`A soma das vendas do ${j + 1}° dia é R$ ${soma}`)
+    console.log(`A média das vendas no dia ${j + 1} foi de R$ ${soma/7}`)
+}
+
+let maiorVenda = matriz[0][0]
+let posição = "[0] [0]"
+for (let i = 0; i < matriz.length; i++) {
+    
+    for (let j = 0; j < matriz[i].length; j++) {
+        if (matriz[i][j] > maiorVenda) {
+            maiorVenda = matriz[i][j]
+            posição = `[${i}] [${j}]`
+        }
+    }
+}
+
+console.log(`A maior venda foi de R$ ${maiorVenda} na posição ${posição}`)
+
