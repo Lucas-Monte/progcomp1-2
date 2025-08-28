@@ -1,5 +1,6 @@
 let matriz = []
 let regiao = []
+let dia = []
 let soma
 let maiorIndice
 let maiorlinhaColuna
@@ -9,9 +10,19 @@ let menorRegiao
 let menor
 
 for (let i = 0; i < 5; i++) {
+   regiao.push(prompt(`Informe a regiao no indice ${i}°`))
+}
+for (let i = 0; i < 5; i++) {
+   dia.push(Number(prompt(`Informe o dia no indice ${i}°`)))
+}
+
+
+for (let i = 0; i < 5; i++) {
     matriz[i] = []
     for (let j = 0; j < 5; j++) {
-        matriz[i][j] = Number(prompt(`Digite o indice da regiao ${i} no dia ${j}:`))
+        do{
+            matriz[i][j] = Number(prompt(`Digite o indice da regiao ${regiao[i]} no dia ${dia[j]}:`))
+        } while (matriz[i][j] > 500 || isNaN(matriz[i][j]))    
     }
 }
 
@@ -64,11 +75,11 @@ for (let i = 0; i < 5; i++) {
     media[i] = soma/(matriz.length)
 }
 menor = media[0]
-menorRegiao = 0
+menorRegiao = regiao[0]
 for (let i = 0; i < 5; i++) {
     if (media[i] < menor) {
         menor = media[i]
-        menorRegiao = i
+        menorRegiao = regiao[i]
     }
 }
 console.log(`Médias por região: ${media}`)
