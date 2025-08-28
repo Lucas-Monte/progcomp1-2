@@ -75,13 +75,13 @@ for (let i = 0; i < 5; i++) {
     media[i] = soma/(matriz.length)
 }
 menor = media[0]
-menorRegiao = regiao[0]
+posicaoMenReg = 0
 for (let i = 0; i < 5; i++) {
     if (media[i] < menor) {
         menor = media[i]
-        menorRegiao = regiao[i]
+        posicaoMenReg = i
     }
 }
 console.log(`Médias por região: ${media}`)
 
-console.log(`A regiao com a menor media dos 5 dias foi a região ${menorRegiao} com a media de indices em ${menor}`)
+console.log(`A regiao com a menor media dos 5 dias foi a região ${menorRegiao} com a media de indices em ${regiao[posicaoMenReg]}`)
